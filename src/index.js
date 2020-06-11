@@ -1,8 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import Header from './components/Header';
+import Container from './components/Container';
+import Flags from "./components/Flags";
 import * as serviceWorker from './serviceWorker';
+import './tailwind.generated.css';
+
+export default function App() {
+  return (
+    <div className="bg-gray-100">
+      <Header />
+      <main role="main">
+        <Container add="py-4">
+          <Flags />
+        </Container>
+      </main>
+    </div>
+  );
+}
 
 ReactDOM.render(
   <React.StrictMode>
@@ -11,7 +26,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
