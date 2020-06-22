@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.2.0",
+    "@svgr/cli": "^5.4.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -16,6 +17,7 @@
     "tailwindcss": "^1.4.6"
   },
   "scripts": {
+    "build:svg": "svgr -d src/data/flags/ src/components/flags/",
     "build:tailwind": "postcss src/tailwind.css -o src/tailwind.generated.css",
     "watch:tailwind": "postcss -w src/tailwind.css -o src/tailwind.generated.css",
     "start": "run-p watch:tailwind start:react",

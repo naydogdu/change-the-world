@@ -6,7 +6,7 @@ import Nav from "./Header/Nav";
 const Header = () => {
   return (
     <header role="banner" className="bg-white shadow-lg py-2 px-4">
-      <Container>
+      <Container add="flex items-center">
         <Logo />
         <Nav />
       </Container>

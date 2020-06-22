@@ -5,6 +5,7 @@ import Container from './components/Container';
 import Flags from "./components/Flags";
 import * as serviceWorker from './serviceWorker';
 import './tailwind.generated.css';
+//import flag from "./data/flags/ad.svg";
 
 export default function App() {
   return (
@@ -12,7 +13,7 @@ export default function App() {
       <Header />
       <main role="main">
         <Container add="py-4">
-          <Flags />
+          <Flags flags={ [] } />
         </Container>
       </main>
     </div>

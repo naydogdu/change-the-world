@@ -1,11 +1,11 @@
 import React from "react";
-//import Flag from "./Flag";
+import Flag from "./Flag";
 
-//{props.cursors.map(cursor => <Cursor key={cursor.name} {...cursor} />)}
+/*{props.flags.map(flag => <Flag key={flag.name} {...flag} />)}*/
 const Flags = props => {
   return (
     <div className="flex flex-wrap flex-1">
-      Test FLAGS
+      {props.flags.map(flag => <Flag key={flag.name} {...flag} />)}
     </div>
   );
 };
