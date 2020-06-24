@@ -17,7 +17,7 @@
     "tailwindcss": "^1.4.6"
   },
   "scripts": {
-    "build:svg": "svgr -d src/data/flags/ src/components/flags/",
+    "build:svg": "@svgr/cli -d src/data/flags/ src/components/Flags/",
     "build:tailwind": "postcss src/tailwind.css -o src/tailwind.generated.css",
     "watch:tailwind": "postcss -w src/tailwind.css -o src/tailwind.generated.css",
     "start": "run-p watch:tailwind start:react",
@@ -41,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^5.4.0"
   }
 }
