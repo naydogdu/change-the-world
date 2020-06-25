@@ -9,7 +9,7 @@ import flagList from "./data/flags"
 
 export default function App() {
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-200">
       <Header />
       <main role="main">
         <Container add="p-4">
