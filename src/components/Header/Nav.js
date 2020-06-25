@@ -1,5 +1,5 @@
-import React from "react";
-import { appDatas } from './../../data/constants';
+import React from "react"
+import { appDatas } from './../../data/constants'
 
 const Nav = () => {
   return (
@@ -11,4 +11,4 @@ const Nav = () => {
   )
 }
 
-export default Nav;
+export default Nav

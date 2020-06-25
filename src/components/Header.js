@@ -1,12 +1,12 @@
-import React from "react";
-import Container from "./Container";
-import Logo from "./Header/Logo";
-import Nav from "./Header/Nav";
+import React from "react"
+import Container from "./Container"
+import Logo from "./Header/Logo"
+import Nav from "./Header/Nav"
 
 const Header = () => {
   return (
-    <header role="banner" className="bg-white shadow-lg py-2 px-4">
-      <Container add="flex items-center">
+    <header role="banner" className="bg-white shadow-lg py-2">
+      <Container add="px-4 flex items-center">
         <Logo />
         <Nav />
       </Container>
@@ -14,4 +14,4 @@ const Header = () => {
   )
 }
 
-export default Header;
+export default Header

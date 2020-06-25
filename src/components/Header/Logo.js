@@ -1,5 +1,5 @@
-import React from "react";
-import { appDatas } from './../../data/constants';
+import React from "react"
+import { appDatas } from './../../data/constants'
 
 const Logo = () => {
   return (
@@ -9,4 +9,4 @@ const Logo = () => {
   )
 }
 
-export default Logo;
+export default Logo

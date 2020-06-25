@@ -1,5 +1,3 @@
-//import React from "react";
-
 const flagFiles = require.context('!@svgr/webpack!./flags', false, /\.svg$/)
 
 const flagList = flagFiles.keys().reduce((files, path) => {
