@@ -608,6 +608,14 @@ video {
 
 /* Adding custom component classes before utilities */
 
+.flag-wrapper {
+  height: 9.25rem;
+}
+
+.flag-wrapper.focused {
+  overflow: visible;
+}
+
 .flag-wrapper.focused > * {
   --transform-translate-x: 0;
   --transform-translate-y: 0;

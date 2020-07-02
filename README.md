@@ -6,11 +6,10 @@ Works in progress :
 * Extract colors when building SVG components
 * Use localstorage to keep user color changes
 * Add reset for user changes
+* Finish Searchform
 * Improve UI
 
-## Features
-
-Easily change colors from Flags. 
-
 ## Credits
-Flags get via https://flagicons.lipis.dev/
+
+* Flags get via [Lipis FlagIcons!](https://flagicons.lipis.dev/)
+* Association with country names via [ssskip!](https://gist.github.com/ssskip/5a94bfcd2835bf1dea52)
