@@ -26,6 +26,7 @@ class Flag extends Component {
 
   generateColorboxes = () => {
     let boxes = []
+    
     for (let i = 1; i <= Object.keys(this.state.colors).length; i++)
       boxes.push(
         <li key={i}>
@@ -38,6 +39,7 @@ class Flag extends Component {
           />
         </li>
       )
+      
     return (
       <ul className="transition-all duration-200 delay-200">
         {boxes}
@@ -47,6 +49,9 @@ class Flag extends Component {
 
   render() {
     const FlagName = this.props.fn
+    //console.log(this.props)
+    //console.log(<FlagName />)
+    
     return (
       <div className={'flag-wrapper overflow-hidden w-40 p-5 bg-white rounded-lg shadow'+(this.state.focused ? ' focused' : '')}>
         <div data-color={this.state.color} className="flag-item shadow rounded-lg overflow-hidden transition-all duration-200 delay-100">
