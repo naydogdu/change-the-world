@@ -4,7 +4,7 @@ import Header from './components/Header'
 import Container from './components/Container'
 import Flags from "./components/Flags"
 import * as serviceWorker from './serviceWorker'
-import './tailwind.generated.css'
+import './style/tailwind.generated.css'
 import flagList from "./data/flags"
 
 export default function App() {

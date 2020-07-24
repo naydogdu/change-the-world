@@ -3,7 +3,7 @@ import React from "react"
 class Colorbox extends React.Component {
   render() {
     return (
-      <div className={'pt-2 transition-all duration-200 delay-150'}>
+      <div className={'colorbox pt-2 transition-all duration-200'}>
         <input 
           type="text"
           className={'w-full text-center font-bold placeholder-black placeholder-opacity-50'}

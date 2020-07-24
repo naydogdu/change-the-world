@@ -19,8 +19,8 @@
   },
   "scripts": {
     "build:svg": "@svgr/cli -d src/data/flags/ src/components/Flags/",
-    "build:tailwind": "postcss src/tailwind.css -o src/tailwind.generated.css",
-    "watch:tailwind": "postcss -w src/tailwind.css -o src/tailwind.generated.css",
+    "build:tailwind": "postcss src/style/tailwind.css -o src/style/tailwind.generated.css",
+    "watch:tailwind": "postcss -w src/style/tailwind.css -o src/style/tailwind.generated.css",
     "start": "run-p watch:tailwind start:react",
     "start:react": "react-scripts start",
     "prebuild": "npm run build:tailwind",
