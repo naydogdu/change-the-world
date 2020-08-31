@@ -8,7 +8,7 @@ export const appDatas = {
       },
       {
          name: 'GitHub',
-         url: 'https://github.com/'
+         url: 'https://github.com/naydogdu/change-the-world'
       },
    ]
 }
