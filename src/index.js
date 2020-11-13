@@ -9,7 +9,7 @@ import flagList from "./data/flags"
 
 export default function App() {
   return (
-    <div className="bg-gray-200">
+    <div className="bg-gradient-to-tl from-indigo-800 to-indigo-700">
       <Header />
       <main role="main">
         <Container add="p-4">

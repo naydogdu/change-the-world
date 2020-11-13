@@ -15,7 +15,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "tailwindcss": "^1.4.6"
+    "tailwindcss": "^1.9.6"
   },
   "scripts": {
     "build:svg": "@svgr/cli -d src/data/flags/ src/components/Flags/",
