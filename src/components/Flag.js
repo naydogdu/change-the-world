@@ -49,12 +49,17 @@ class Flag extends Component {
 
   render() {
     const FlagName = this.props.fn
-    //console.log(this.props)
-    //console.log(<FlagName />)
-    
+
     return (
-      <div className={'flag-wrapper overflow-hidden w-40 p-5 bg-indigo-900 bg-opacity-75 rounded-lg shadow'+(this.state.focused ? ' focused' : '')}>
-        <div data-color={this.state.color} className="flag-item shadow rounded-lg overflow-hidden transition-all duration-200 delay-100">
+      <div className={[
+          'flag-wrapper overflow-hidden w-40 p-5',
+          'bg-gray-800 rounded-lg shadow-lg',
+          (this.state.focused ? 'focused' : '')
+      ].join(' ')}>
+        <div
+            data-color={this.state.color}
+            className="flag-item shadow rounded-lg overflow-hidden transition-all duration-200 delay-100"
+        >
           <FlagName />
         </div>
         {this.generateColorboxes()}

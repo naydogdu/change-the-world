@@ -4,12 +4,13 @@ import Header from './components/Header'
 import Container from './components/Container'
 import Flags from "./components/Flags"
 import * as serviceWorker from './serviceWorker'
-import './style/tailwind.generated.css'
 import flagList from "./data/flags"
+
+import './style/global.css'
 
 export default function App() {
   return (
-    <div className="bg-gradient-to-tl from-indigo-800 to-indigo-700">
+    <div className="bg-gradient-to-tl from-gray-900 to-gray-800">
       <Header />
       <main role="main">
         <Container add="p-4">

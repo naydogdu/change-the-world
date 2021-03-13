@@ -4,7 +4,13 @@ import { appDatas } from './../../data/constants'
 const Logo = () => {
   return (
     <div className="py-4 font-black">
-      <a title={appDatas.intro} href="/">{appDatas.title}</a>
+      <a
+          title={appDatas.intro}
+          href="/"
+          className={"hover:text-white"}
+      >
+          {appDatas.title}
+      </a>
     </div>
   )
 }

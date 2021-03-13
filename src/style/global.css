@@ -1,0 +1,11 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "./flag.css";
+
+@layer utilities {
+    .grid-auto-fit {
+        grid-template-columns: repeat(auto-fit, 10rem);
+    }
+}

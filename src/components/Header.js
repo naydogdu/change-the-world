@@ -6,7 +6,7 @@ import Searchform from "./Searchform"
 
 const Header = () => {
   return (
-    <header role="banner" className="bg-indigo-900 bg-opacity-75 text-indigo-200 shadow py-2">
+    <header role="banner" className="bg-gray-800 text-gray-200 shadow-lg py-2">
       <Container add="px-4 flex items-center">
         <Logo />
         <Nav />

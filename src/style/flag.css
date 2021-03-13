@@ -1,8 +1,3 @@
-/* purgecss start ignore */
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-
-/* Adding custom component classes before utilities */
 .flag-wrapper {
   height: 9.25rem;
 }
@@ -34,15 +29,4 @@
 
 .flag-wrapper.focused > .shadow {
   box-shadow: 0 -10px 50px -5px rgba(0, 0, 0, 0.25);
-}
-/* purgecss end ignore */
-
-@import "tailwindcss/utilities";
-
-.place-center {
-  place-content: center;
-}
-
-.grid-auto-fit {
-  grid-template-columns: repeat(auto-fit, 10rem);
 }
