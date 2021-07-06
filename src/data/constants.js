@@ -1,6 +1,6 @@
 export const appDatas = {
-   title: "Change the World Flags !",
-   intro: "Easily list and change all the flags in the World !",
+   title: "Change the World Flags !",
+   intro: "Easily list and change all the flags in the World !",
    nav: [
       {
          name: 'Home',

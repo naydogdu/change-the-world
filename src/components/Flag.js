@@ -1,71 +1,96 @@
-import React, { Component } from "react"
+import React, {useEffect, useRef, useState} from "react"
 import Colorbox from "./Colorbox"
 
-class Flag extends Component {
-  constructor() {
-    super();
-    this.state = {
-      colors : {
-        1: '',
-        2: '',
-        3: ''
-      },
-      focused: false
+const Flag = props => {
+    const FlagName = props.svg
+    const flagContainer = useRef(null)
+
+    const [active, setActive] = useState(false)
+    const [focused, setFocused] = useState(false)
+    const [colors, setColors] = useState({})
+
+    const handleActive = () => {
+        browseNode(flagContainer.current)
+        setActive(!active)
     }
-  }
 
-  handleChangeColor = (i,e) => {
-    let newState = Object.assign({}, this.state)
-    newState.colors[i] = e.target.value
-    this.setState(newState)
-  }
+    const handleChange = (i,e) => {
+        console.log('handleChangeColor', i, e.target)
 
-  handleChangeStyle = () => this.setState({
-    focused: !this.state.focused
-  })
+        Array.from(flagContainer.current.querySelectorAll(`[data-fill="${e.target.name}"]`)).map((el) => {
+            console.log(el.fill)
+            el.setAttribute('fill', e.target.value)
+        })
 
-  generateColorboxes = () => {
-    let boxes = []
-    
-    for (let i = 1; i <= Object.keys(this.state.colors).length; i++)
-      boxes.push(
-        <li key={i}>
-          <Colorbox
-            value={this.state.colors.i}
-            onChangeColor={(e) => this.handleChangeColor(i,e)}
-            onFocus={this.handleChangeStyle}
-            onBlur={this.handleChangeStyle}
-            holder={"Color "+ i }
-          />
-        </li>
-      )
-      
-    return (
-      <ul className="transition-all duration-200 delay-200">
-        {boxes}
-      </ul>
-    )
-  }
+        Array.from(flagContainer.current.querySelectorAll(`[data-stroke="${e.target.name}"]`)).map((el) => {
+            el.setAttribute('stroke', e.target.value)
+        })
 
-  render() {
-    const FlagName = this.props.fn
+        setColors((keep) => ({
+            ...keep,
+            [e.target.name]: e.target.value
+        }))
+    }
+
+    const browseNode = (node) => {
+        [...node.attributes].map((attr) => {
+            if(attr.name === 'fill' || attr.name === 'stroke') {
+                node.dataset[attr.name] = attr.value
+                setColors((keep) => ({
+                    ...keep,
+                    [attr.value]: attr.value
+                }))
+            }
+        })
+        if( node.childNodes.length > 0 ) {
+            [...node.childNodes].map((el,i) => {
+                return browseNode(el)
+            })
+        }
+    }
 
     return (
-      <div className={[
-          'flag-wrapper overflow-hidden w-40 p-5',
-          'bg-gray-800 rounded-lg shadow-lg',
-          (this.state.focused ? 'focused' : '')
-      ].join(' ')}>
         <div
-            data-color={this.state.color}
-            className="flag-item shadow rounded-lg overflow-hidden transition-all duration-200 delay-100"
+            className={[
+                "relative flex flex-col p-5 pb-3 bg-gray-800 rounded-lg transform",
+                (active ? "shadow-4xl -translate-y-px" : "shadow-lg"),
+            ].join(' ')}
         >
-          <FlagName />
+            <button
+                className={[
+                    "transform flex-shrink-0 rounded-lg overflow-hidden",
+                    "transition-all ring-gray-900 focus:outline-none focus:ring-4",
+                    (active ? "shadow-3xl -translate-y-16 hover:-translate-y-12" : "shadow hover:-translate-y-1"),
+                ].join(' ')}
+                onClick={() => handleActive()}
+                ref={flagContainer}
+            >
+                <FlagName />
+            </button>
+            {active &&
+                <ul className="transition-all duration-200 delay-200">
+                    {Object.entries(colors).map((el,i) => (
+                        <li key={i} className={"pt-2 transition-all duration-200"}>
+                            <Colorbox
+                                name={el[0]}
+                                value={el[1]}
+                                onChange={(e) => handleChange(i,e)}
+                                placeholder={["Color", el[1]].join(' ')}
+                            />
+                        </li>
+                    ))}
+                </ul>
+            }
+            <p
+                className={[
+                    "text-left pt-2 text-gray-300 mt-auto sm:text-xs truncate transition transform",
+                ].join(' ')}
+            >
+                {props.name}
+            </p>
         </div>
-        {this.generateColorboxes()}
-      </div>
     )
-  }
 }
 
 export default Flag
+

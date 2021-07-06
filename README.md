@@ -1,15 +1,14 @@
 # Change the World !
 
-Easily change the colors of all flags of the world.
+Easily change the colors of all flags of the world. Work in progress...
 
-Works in progress :
-* Extract colors when building SVG components
+## To do
+* Colorpicker
 * Use localstorage to keep user color changes
-* Add reset for user changes
-* Finish Searchform
-* Improve UI
+* Add individual reset of user changes + reset all
+* Searchform
 
 ## Credits
 
 * Flags get via [Lipis FlagIcons!](https://flagicons.lipis.dev/)
-* Association with country names via [ssskip!](https://gist.github.com/ssskip/5a94bfcd2835bf1dea52)
+* Base list of country codes [ssskip!](https://gist.github.com/ssskip/5a94bfcd2835bf1dea52)
